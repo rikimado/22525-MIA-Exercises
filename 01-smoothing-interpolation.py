@@ -1,4 +1,3 @@
-
 # Exercise 1 - Smoothing and Interpolation
 
 # Input data and code hints
@@ -8,8 +7,8 @@ from matplotlib import pyplot as plt
 
 np.set_printoptions(suppress=True)
 plt.ion()
-# Read a 3D volume (MRI scan of the brain) and extract the 2D slice (75) used in this exercises:
 
+# Read a 3D volume (MRI scan of the brain) and extract the 2D slice (75) used in this exercises:
 T1_file = 'IXI002-Guys-0828-T1.nii.gz'
 T1_nib = nib.load( T1_file )
 data = T1_nib.get_fdata()
@@ -22,7 +21,6 @@ T = np.flipud( img.T )
 # Extract the 1D signal at the middle row of the slice:
 row = round( T.shape[0] / 2 )
 t = T[row, :] #pixel intensity signal at row y = 128
-
 N = t.shape[0] # 256
 x = np.arange(0, N)
 
@@ -114,8 +112,10 @@ h = (N - 1) / (M - 1)
 # Domain
 x = np.arange(0,N)
 
-# Build basis functions matrix Φ (N x M) where each column is a basis 
-# function evaluated at all points of the domain
+"""
+Build basis functions matrix Φ (NxM) where each column is a basis 
+function evaluated at all points of the domain
+"""
 Phi = np.zeros((N, M)) # [256x6]
 
 for m in range(M):
@@ -129,8 +129,7 @@ for m in range(M):
      m=0 → 1st basis function centered at 0
      m=1 → 2nd basis function centered at 1
      etc..
-     
-     """
+    """
     Phi[:, m] = eval_BSpline(x/h-m, order=3)
 
 # Plot
@@ -511,4 +510,5 @@ for idx, order in enumerate(orders):
 
 plt.suptitle("Figure 9", y=-0.1, fontsize=16)
 plt.tight_layout()
+
 plt.show()
