@@ -1,4 +1,4 @@
 # 22525 Medical Image Analysis (Technical University of Denmark)
-![Pathology Image Analysis](https://spj.science.org/cms/10.34133/2021/8786793/asset/aa5477a0-6fcf-4a76-bd5c-bdcd79ce919f/assets/graphic/8786793.fig.001.jpg)
+![Pathology Image Analysis](https://deepai.org/gallery-item/d516d35c1a2844dc8bfb19ba5047d38f/medical-images-analysis.jpg.html)
 
 ## Exercises for Fall 2025
